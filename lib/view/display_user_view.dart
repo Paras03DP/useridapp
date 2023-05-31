@@ -15,9 +15,9 @@ class _DisplayUserViewState extends State<DisplayUserView> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text(
-            "Display User",
-          ),
+          title: const Text("Display User"),
+          backgroundColor: Colors.purple,
+          centerTitle: true,
         ),
         body: Column(
           children: [
@@ -36,11 +36,3 @@ class _DisplayUserViewState extends State<DisplayUserView> {
         ));
   }
 }
-// import 'package:getit/di/di.dart';
-
-// import '../repository/user_repository.dart';
-
-// void main() {
-//   UserRepository userRepository = getIt<UserRepository>();
-//   print(userRepository.getUser());
-// }

@@ -24,19 +24,21 @@ class _AddUserViewState extends State<AddUserView> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Add User"),
+        centerTitle: true,
+        backgroundColor: Colors.purple,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text("Add User", style: TextStyle(fontSize: 24)),
+            const Text("Add your information", style: TextStyle(fontSize: 24)),
             const SizedBox(height: 16.0),
             TextField(
               controller: idController,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Id',
+                labelText: 'Enter you id',
               ),
             ),
             const SizedBox(height: 16.0),
@@ -44,14 +46,14 @@ class _AddUserViewState extends State<AddUserView> {
               controller: nameController,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Name',
+                labelText: 'Enter your name',
               ),
             ),
             const SizedBox(height: 16.0),
             TextFormField(
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Date of Birth',
+                labelText: 'Enter your Date of Birth',
               ),
               controller: dobController,
               readOnly: true,
@@ -78,7 +80,7 @@ class _AddUserViewState extends State<AddUserView> {
               readOnly: true,
               decoration: InputDecoration(
                 border: const OutlineInputBorder(),
-                labelText: 'Birth Time',
+                labelText: 'Enter your Birth Time',
                 suffixIcon: IconButton(
                   icon: const Icon(Icons.access_time),
                   onPressed: () async {
@@ -110,17 +112,19 @@ class _AddUserViewState extends State<AddUserView> {
 
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
-                    content: Text('added'),
+                    content: Text('Added Sucessfully'),
                   ),
                 );
               },
-              child: const Text('Add User'),
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.purple),
+              child: const Text('Added User'),
             ),
             const SizedBox(height: 8.0),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/displayUser');
               },
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.purple),
               child: const Text('Display User'),
             ),
           ],
